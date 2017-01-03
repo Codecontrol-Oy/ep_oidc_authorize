@@ -11,8 +11,5 @@
   	},
 	"contributors": [],
 	"dependencies": {},
-	"peerDependencies": {
-    	"ep_etherpad_lite": ">=1.5.1"
-  	},
 	"engines": { "node": ">= 0.6.0"}
 }
