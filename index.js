@@ -8,18 +8,26 @@ exports.authorize = function(hook_name, context, cb) {
   if (context.req.session.passport) {
 
       try {
-          var authorizeUrl = process.env.ETHERPAD_AUTH_URL;
+          var authorizeUrl = "http://10.0.1.12:9666/api/v1.0/pads/authorize";
+          //var authorizeUrl = process.env.ETHERPAD_AUTH_URL;
           var xmlHttp = new XMLHttpRequest();
-          var data = new FormData();
-          data.append('sub', context.req.session.passport.sub);
-          data.append('url', context.req.url);
+
+          if (typeof context != "undefined" && context.req.session.passport.sub != null)
+              authorizeUrl += "?sub=" + context.req.session.passport.sub;
+          else
+              authorizeUrl += "?sub=test";
+
+          if (typeof context != "undefined" && context != null && context.req.url != null)
+              authorizeUrl += "&url=" + context.req.url;
+          else
+              authorizeUrl += "&url=" + "testurl";
 
           xmlHttp.open("GET", authorizeUrl, false); // false for synchronous request
-          xmlHttp.send(data);
-          console.debug("ep_oidc_authorize: responseText: " + xmlHttp.responseText);
+          xmlHttp.send();
+          console.debug("ep_oidc_authorize: statuscode: " + xmlHttp.status);
 
           var resp = JSON.parse(xmlHttp.responseText);
-          if (resp.hasRights == true) {
+          if (xmlHttp.status = 200 && resp.hasRights == true) {
               console.debug("ep_oidc_authorize: Authorize success");
               return cb([true]);
           }
