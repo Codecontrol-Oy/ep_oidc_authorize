@@ -17,7 +17,7 @@ exports.authorize = function (hook_name, context, cb) {
           authorizeUrl += "&url=" + context.resource;
 
           request.get({
-              url: 'http://10.0.1.12:9666/api/v1.0/pads/authorize?sub=frompad&url=frompadtesturl',
+              url: authorizeUrl,
               json: true
           }, function (err, res, data) {
               if (err) {
