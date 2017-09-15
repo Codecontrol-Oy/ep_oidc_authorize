@@ -7,10 +7,10 @@
   "email": "toni.iltanen@codecontrol.fi"
  },
  "contributors": [
-    {
+ {
       "name": "Juho Heikkilä",
       "email": "juho.heikkila@koodifarmi.fi"
-    }
+ },
  "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1"
  },
