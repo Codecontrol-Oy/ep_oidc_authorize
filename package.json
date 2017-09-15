@@ -1,15 +1,22 @@
 {
-	"name": "ep_oidc_authorize",
-	"version": "1.0.0",
-	"description": "Authorization for ep_oidc",
-  	"author": {
-    	"name": "ToniIltanen",
-    	"email": "toni.iltanen@codecontrol.fi"
- 	 },
-	"scripts": {
-    	"test": "echo \"Error: no test specified\" && exit 1"
-  	},
-	"contributors": [],
-	"dependencies": {},
-	"engines": { "node": ">= 0.6.0"}
+ "name": "ep_oidc_authorize",
+ "version": "1.0.0",
+ "description": "Authorization for ep_oidc",
+ "author": {
+  "name": "ToniIltanen",
+  "email": "toni.iltanen@codecontrol.fi"
+ },
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "contributors": [],
+ "dependencies": {
+  "async": "^2.0.0-rc.6",
+  "async-stacktrace": "0.0.2",
+  "log4js": "^2.3.3",
+  "request": "^2.72.0"
+ },
+ "engines": {
+  "node": ">= 0.6.0"
+ }
 }
