@@ -26,7 +26,6 @@ exports.authorize = function (hook_name, context, cb) {
       }
 
       try {
-          //var authorizeUrl = "http://10.0.1.12:9666/api/v1.0/pads/authorize";
           var authorizeUrl = process.env.ETHERPAD_AUTH_URL;
           authorizeUrl += "?user_id=" + context.req.session.passport.user.sub;
           authorizeUrl += "&resource=" + context.resource;
