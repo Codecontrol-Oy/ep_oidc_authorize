@@ -1,5 +1,5 @@
 {
- "name": "@omahoito/ep_oidc_authorize",
+ "name": "ep_oidc_authorize",
  "version": "1.0.0",
  "description": "Authorization for ep_oidc",
  "author": {
